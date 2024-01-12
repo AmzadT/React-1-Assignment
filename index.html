@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEX-BOX</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #root {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .box {
+        width: 30%;
+        padding: 20px;
+        border: 1px solid #333;
+        text-align: center;
+      }
+
+      .box1 {
+        background-color: #ff5733; 
+      }
+
+      .box2 {
+        background-color: #33ff57;
+      }
+
+      .box3 {
+        background-color: #5733ff;
+      }
+
+      .box4 {
+        background-color: #ffff33; 
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      var containerStyle = {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f0f0f0',
+      };
+
+      var boxStyle = {
+        width: '30%',
+        padding: '30px',
+        border: '1px solid #333',
+        textAlign: 'center',
+      };
+
+      var App = () => {
+        return React.createElement('div', { style: containerStyle },
+          React.createElement('div', { className: 'box box1', style: boxStyle }, 'Box 1'),
+          React.createElement('div', { className: 'box box2', style: boxStyle }, 'Box 2'),
+          React.createElement('div', { className: 'box box3', style: boxStyle }, 'Box 3'),
+          React.createElement('div', { className: 'box box4', style: boxStyle }, 'Box 4')
+        );
+      };
+
+      ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+
+  </body>
+</html>
